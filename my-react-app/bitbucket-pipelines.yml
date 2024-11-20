@@ -1,0 +1,19 @@
+image: node:16  # Utilisation de l'image Docker officielle Node.js version 16
+
+pipelines:
+  default:
+    - step:
+        name: "Installer les dépendances"
+        caches:
+          - node
+        script:
+          - npm install  # Installe les dépendances
+    - step:
+        name: "Exécuter les tests"
+        script:
+          - npm test  # Lance les tests unitaires
+    - step:
+        name: "Déploiement"
+        script:
+          - echo "Déploiement en cours..."
+          - npm run deploy  # Déploie l'application
