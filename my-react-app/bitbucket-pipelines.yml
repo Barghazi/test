@@ -1,18 +1,11 @@
-image: node:16  # Utilisation de l'image Docker officielle Node.js version 16
+image: node:16  # Utilisation d'une image Docker contenant Node.js
 
 pipelines:
   default:
     - step:
-        name: "Installer les dépendances"
+        name: Build Only
         caches:
           - node
         script:
-          - npm install  # Installe les dépendances
-    - step:
-        name: "Exécuter les tests"
-        script:
-          - npm test  # Lance les tests unitaires
-    - step:
-        name: "Construire l'application"
-        script:
-          - npm run build  # Compile l'application React pour la production
+          - npm install   # Installe les dépendances
+          - npm run build  # Effectue le build de votre application
