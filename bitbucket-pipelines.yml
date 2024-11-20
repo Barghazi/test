@@ -4,7 +4,8 @@ pipelines:
         name: Install and Test
         image: node:22
         caches:
-          - node
+          - node # Utilise le cache pour éviter de télécharger à chaque exécution
         script:
-          - npm install
-          - npm test
+          - cd my-react-app   # Accède au dossier où se trouve package.json
+          - npm install       # Installe les dépendances du projet
+          - npm test          # Exécute les tests
