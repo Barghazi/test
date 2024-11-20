@@ -1,12 +1,10 @@
 pipelines:
   default:
     - step:
-        name: Build and Install
+        name: Build and Test React Project
         caches:
           - node
         script:
-          # Naviguer dans le répertoire 'my-react-app'
-          - cd my-react-app
-          # Installer les dépendances depuis le package.json
+          - cd my-react-app # Assurez-vous de naviguer dans le répertoire où se trouve votre projet React
           - npm install
-          # Ajoutez d'autres commandes si nécessaire (par exemple, build ou test)
+          - npm run build
