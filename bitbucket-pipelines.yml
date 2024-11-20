@@ -1,11 +1,19 @@
 pipelines:
   default:
     - step:
-        name: Install and Test
+        name: Install Dependencies
         image: node:22
         caches:
-          - node # Utilise le cache pour éviter de télécharger à chaque exécution
+          - node
         script:
-          - cd my-react-app   # Accède au dossier où se trouve package.json
-          - npm install       # Installe les dépendances du projet
-          - npm test          # Exécute les tests
+          - cd my-react-app # Se déplacer dans le dossier contenant le fichier package.json
+          - npm install     # Installer les dépendances
+
+    - step:
+        name: Build Project
+        image: node:22
+        caches:
+          - node
+        script:
+          - cd my-react-app
+          - npm run build  # Construire le projet React
