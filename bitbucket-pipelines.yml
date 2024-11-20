@@ -1,10 +1,10 @@
 pipelines:
   default:
     - step:
-        name: Build and Test React Project
+        name: Install and Test
+        image: node:22
         caches:
           - node
         script:
-          - cd my-react-app # Assurez-vous de naviguer dans le répertoire où se trouve votre projet React
           - npm install
-          - npm run build
+          - npm test
