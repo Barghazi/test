@@ -13,7 +13,6 @@ pipelines:
         script:
           - npm test  # Lance les tests unitaires
     - step:
-        name: "Déploiement"
+        name: "Construire l'application"
         script:
-          - echo "Déploiement en cours..."
-          - npm run deploy  # Déploie l'application
+          - npm run build  # Compile l'application React pour la production
