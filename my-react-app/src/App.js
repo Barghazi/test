@@ -1,9 +1,13 @@
+// src/App.js
+
 import React from 'react';
+import './App.css';
+import StyledComponentExample from './StyledComponentExample'; // Import du composant
 
 function App() {
   return (
-    <div>
-      <h1>Hello, React!</h1>
+    <div className="App">
+      <StyledComponentExample /> {/* Utilisation du composant */}
     </div>
   );
 }
