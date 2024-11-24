@@ -20,7 +20,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18' # Version Node.js
-
+      - name: Go to project folder
+        run: cd my-react-app
       - name: Install dependencies
         run: npm install
 
