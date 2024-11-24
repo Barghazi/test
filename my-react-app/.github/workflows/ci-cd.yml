@@ -19,14 +19,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22' # Version Node.js
+          node-version: '18' # Version Node.js
 
       - name: Install dependencies
         run: npm install
 
-      # Supprimez ou commentez cette étape si vous n'avez pas encore de tests
-      #- name: Run tests
-       # run: npm test
+      # Si tu as des tests
+      # - name: Run tests
+      #   run: npm test
 
       - name: Build project
         run: npm run build
