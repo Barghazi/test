@@ -20,9 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18' # Version Node.js
-      - name: Go to project folder
-        run: cd my-react-app
+
       - name: Install dependencies
+        working-directory: my-react-app  # Spécifie le dossier du projet
         run: npm install
 
       # Si tu as des tests
@@ -30,6 +30,7 @@ jobs:
       #   run: npm test
 
       - name: Build project
+        working-directory: my-react-app  # Spécifie le dossier du projet
         run: npm run build
 
   deploy:
