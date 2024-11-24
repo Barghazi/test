@@ -26,11 +26,9 @@ jobs:
         run: npm install
 
       # Si tu as des tests
-      # - name: Run tests
-      #   run: npm test
+      - name: Run tests
+        run: npm test
 
       - name: Build project
         working-directory: my-react-app  # Spécifie le dossier du projet
         run: npm run build
-
- 
