@@ -33,16 +33,4 @@ jobs:
         working-directory: my-react-app  # Spécifie le dossier du projet
         run: npm run build
 
-  deploy:
-  runs-on: ubuntu-latest
-  needs: build
-
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Go to project folder
-      run: cd my-react-app
-
-    - name: Deploy to Vercel
-      run: npx vercel --prod -t ${{ secrets.VERCEL_TOKEN }} --confirm -m githubCommitSha=${{ github.sha }} -m githubCommitAuthorName=${{ github.actor }} -m githubCommitMessage="${{ github.event.head_commit.message }}" -m githubCommitRef=${{ github.ref }}
+ 
