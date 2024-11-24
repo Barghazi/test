@@ -1,3 +1,14 @@
+
+name: React CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,19 +20,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-
-      - name: List files in project directory
-        run: ls -alh my-react-app
+          node-version: '18' # Version Node.js
 
       - name: Install dependencies
-        working-directory: my-react-app
+        working-directory: my-react-app  # Spécifie le dossier du projet
         run: npm install
 
-      - name: Run tests
-        working-directory: my-react-app
-        run: npm test
+      # Si tu as des tests
+      # - name: Run tests
+      #   run: npm test
 
       - name: Build project
-        working-directory: my-react-app
+        working-directory: my-react-app  # Spécifie le dossier du projet
         run: npm run build
+  
